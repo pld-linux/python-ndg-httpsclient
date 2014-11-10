@@ -43,6 +43,8 @@ rm -rf $RPM_BUILD_ROOT
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
+%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_postclean
 
 %clean
@@ -54,4 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/ndg
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/ndg_httpsclient-%{version}-py*.egg-info
+%{py_sitescriptdir}/ndg_httpsclient-%{version}-py*-nspkg.pth
 %endif
