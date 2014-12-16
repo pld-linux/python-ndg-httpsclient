@@ -3,14 +3,15 @@
 %bcond_without	tests	# do not perform "make test"
 
 %define 	module	ndg-httpsclient
-Summary:	Provides enhanced HTTPS support for httplib and urllib2 using PyOpenSSL
+Summary:	Enhanced HTTPS support for httplib and urllib2 using PyOpenSSL
+Summary(pl.UTF-8):	Rozszerzona obsługa HTTPS dla modułów httplib i urllib2 poprzez PyOpenSSL
 Name:		python-%{module}
-Version:	0.3.2
+Version:	0.3.3
 Release:	1
 License:	BSD
 Group:		Libraries/Python
 Source0:	https://pypi.python.org/packages/source/n/ndg-httpsclient/ndg_httpsclient-%{version}.tar.gz
-# Source0-md5:	076303c7aa0e41f3b45a7cb43dbb0743
+# Source0-md5:	c05794017dedee47b297185d82ef795e
 URL:		http://ndg-security.ceda.ac.uk/wiki/ndg_httpsclient
 BuildRequires:	python-distribute
 BuildRequires:	python-pyOpenSSL
@@ -27,6 +28,12 @@ This is a HTTPS client implementation for httplib and urllib2 based on
 PyOpenSSL. PyOpenSSL provides a more fully featured SSL implementation
 over the default provided with Python and importantly enables full
 verification of the SSL peer.
+
+%description -l pl.UTF-8
+Ten moduł to implementacja klienta HTTPS dla modułów httplib i urllib2
+oparta na module PyOpenSSL. PyOpenSSL udostępnia pełniejszą
+implementację SSL niż domyślnie dostarczana z Pythonem i umożliwia
+pełną weryfikację drugiej strony połączenia SSL.
 
 %prep
 %setup -q -n ndg_httpsclient-%{version}
