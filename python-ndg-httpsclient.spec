@@ -39,16 +39,12 @@ pełną weryfikację drugiej strony połączenia SSL.
 %setup -q -n ndg_httpsclient-%{version}
 
 %build
-%{__python} setup.py build --build-base build-2 %{?with_tests:test}
+%py_build %{?with_tests:test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__python} setup.py \
-	build --build-base build-2 \
-	install --skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
