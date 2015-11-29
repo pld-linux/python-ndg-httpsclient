@@ -16,7 +16,7 @@ URL:		http://ndg-security.ceda.ac.uk/wiki/ndg_httpsclient
 BuildRequires:	python-distribute
 BuildRequires:	python-pyOpenSSL
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	python-modules
 Requires:	python-pyOpenSSL
 Requires:	python-pyasn1
