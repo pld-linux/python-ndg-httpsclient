@@ -1,0 +1,7 @@
+Let background process PID stay the same as initial, so that we can could use pid=$! ... kill $pid
+--- ndg_httpsclient-0.4.2/ndg/httpsclient/test/scripts/openssl_https_server.sh.orig	2016-07-19 15:26:01.000000000 +0200
++++ ndg_httpsclient-0.4.2/ndg/httpsclient/test/scripts/openssl_https_server.sh	2017-03-04 18:28:11.383614685 +0100
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-openssl s_server -www -cert pki/localhost.crt -key pki/localhost.key -accept 4443
++exec openssl s_server -www -cert pki/localhost.crt -key pki/localhost.key -accept 4443
