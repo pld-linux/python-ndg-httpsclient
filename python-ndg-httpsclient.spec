@@ -9,7 +9,7 @@ Summary:	Enhanced HTTPS support for httplib and urllib2 using PyOpenSSL
 Summary(pl.UTF-8):	Rozszerzona obsługa HTTPS dla modułów httplib i urllib2 poprzez PyOpenSSL
 Name:		python-%{module}
 Version:	0.4.2
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries/Python
 Source0:	https://github.com/cedadev/ndg_httpsclient/archive/%{version}.tar.gz
@@ -132,7 +132,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.md ndg/httpsclient/LICENSE
-%attr(755,root,root) %{_bindir}/ndg_httpclient
 %{py_sitescriptdir}/ndg
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/ndg_httpsclient-%{version}-py*.egg-info
@@ -144,6 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python3-%{module}
 %defattr(644,root,root,755)
 %doc README.md ndg/httpsclient/LICENSE
+%attr(755,root,root) %{_bindir}/ndg_httpclient
 %{py3_sitescriptdir}/ndg
 %{py3_sitescriptdir}/ndg_httpsclient-%{version}-py*.egg-info
 %{py3_sitescriptdir}/ndg_httpsclient-%{version}-py*-nspkg.pth
