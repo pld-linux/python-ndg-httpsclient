@@ -68,7 +68,7 @@ pełną weryfikację drugiej strony połączenia SSL.
 
 %prep
 %setup -q -n ndg_httpsclient-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 %build
 %if %{with python2}
